@@ -1,0 +1,50 @@
+>>> text_indentation("Hello. World!")
+Hello.
+
+World!
+
+>>> text_indentation("Hello: World?")
+Hello:
+
+World?
+
+>>> text_indentation("Welcome to. Holberton? School!")
+Welcome to.
+
+Holberton?
+
+School!
+
+>>> text_indentation("Hello.  World:  ")
+Hello.
+
+World:
+
+>>> text_indentation("Hello World.")
+Hello World.
+
+>>> text_indentation("")
+<BLANKLINE>
+>>> text_indentation("Hello World")
+Hello World.
+>>> text_indentation("Hello.World?hello:World.")
+Hello.
+
+World?
+
+hello:
+
+World.
+
+>>> text_indentation("Hello:. World")
+Hello:
+
+World
+
+>>> text_indentation(12345)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation("End of test.")
+End of test.
+
