@@ -72,7 +72,8 @@ class Rectangle:
         """Calculate and return the perimeter of the rectangle.
 
         Returns:
-            int: The perimeter of the rectangle if both width and height are non-zero.
+            int: The perimeter of the rectangle
+            if both width and height are non-zero.
                  Otherwise, returns 0.
         """
         if self.__width == 0 or self.__height == 0:
