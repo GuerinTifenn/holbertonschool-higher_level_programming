@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Create an abstract class"""
 
+
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
