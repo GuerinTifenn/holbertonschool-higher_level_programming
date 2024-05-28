@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """student to JSON"""
 
+
 class Student:
     """
     A class that defines a student by first name, last name, and age.
