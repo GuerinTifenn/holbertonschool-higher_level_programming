@@ -13,7 +13,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         """Handle GET requests based on the request path."""
 
-        print("Received GET request for path: {}".format(self.path))
+        print(f"Received GET request for path: {self.path}")
 
         if self.path == '/':
             self.send_response(200)
@@ -55,5 +55,5 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 """Server configuration and startup"""
 if __name__ == "__main__":
     with socketserver.TCPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
-        print("Serving on port {}".format(PORT))
+        print(f"Serving on port {PORT}")
         httpd.serve_forever()
