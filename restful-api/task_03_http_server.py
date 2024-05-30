@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""A simple HTTP request handler to serve different endpoints."""
+"""Custom HTTP request handler class to handle GET requests."""
+
+
 import http.server
 import socketserver
 import json
@@ -8,8 +10,6 @@ PORT = 8000
 
 
 class MyHandler(http.server.BaseHTTPRequestHandler):
-    """Custom HTTP request handler class to handle GET requests."""
-
     def do_GET(self):
         """Handle GET requests based on the request path."""
         if self.path == "/":
@@ -50,7 +50,9 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(response).encode('utf-8'))
 
 
-with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
-    """Start the server on the specified port and handle requests."""
-    print("Serving at port {}".format(PORT))
-    httpd.serve_forever()
+"""Server configuration and startup"""
+if __name__ == "__main__":
+    with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
+        """Start the server on the specified port and handle requests."""
+        print("Serving at port {}".format(PORT))
+        httpd.serve_forever()
