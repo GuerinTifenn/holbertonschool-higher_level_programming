@@ -12,6 +12,7 @@ PORT = 8000
 class MyHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         """Handle GET requests based on the request path."""
+
         print("Received GET request for path: {}".format(self.path))
 
         if self.path == '/':
