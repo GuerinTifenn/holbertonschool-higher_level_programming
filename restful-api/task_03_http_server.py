@@ -9,11 +9,11 @@ import socketserver
 PORT = 8000
 
 
-class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
+class MyHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         """Handle GET requests based on the request path."""
 
-        print(f"Received GET request for path: {self.path}")
+        print("Received GET request for path: {}".format(self.path))
 
         if self.path == '/':
             self.send_response(200)
@@ -54,6 +54,6 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
 """Server configuration and startup"""
 if __name__ == "__main__":
-    with socketserver.TCPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
-        print(f"Serving on port {PORT}")
+    with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
+        print("Serving on port {}".format(PORT))
         httpd.serve_forever()
