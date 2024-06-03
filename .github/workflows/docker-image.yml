@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Construction et Déploiement de l'Image Docker
 
 on:
   push:
@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Récupérer le Répertoire
         uses: actions/checkout@v2
 
-      - name: Build Docker Image
-        run: docker build . -t ${{ github.repository_owner }}/holbertonschool-higher_level_programming:latest
+      - name: Construire l'Image Docker
+        run: docker build . -t guerintifenn/holbertonschool-higher_level_programming:latest
 
-      - name: Login to GitHub Container Registry
+      - name: Connexion au Registre des Conteneurs GitHub
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
 
-      - name: Push Docker Image
+      - name: Pousser l'Image Docker
         run: |
-          docker push ${{ github.repository_owner }}/holbertonschool-higher_level_programming:latest
+          docker push guerintifenn/holbertonschool-higher_level_programming:latest
