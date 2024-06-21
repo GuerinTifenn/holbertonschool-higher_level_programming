@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Safe from MySQL injection: Displays all values in the states table where name matches the argument.
+Safe from MySQL injection: Displays all values in the states table where name
+matches the argument.
 """
 import MySQLdb
 import sys
